@@ -11,7 +11,7 @@ export default class JsonComponent extends Component {
     render (){
         console.log(this.props.items)
         return ( <div>
-            {this.props.items.map((item, idx)=> <div key={idx} id={item.id}> email: {item.email}  <br />  name: {item.name} </div> )}
+            {this.props.items.map((item, idx)=> <div key={idx} id={item.id}> email: {item.email}  <br />  name: {item.name} <br /> text: {item.body}  <br /> <br/> </div> )}
             <button onClick={this.props.onSend}>Watch more</button> <br />
             <button onClick={this.props.onRemove}>Del All</button> <br />
 
