@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import isLoader from '..//hoc/isLoader.js';
+import withLoader from '..//hoc/isLoader.js';
 
  class JsonComponent extends Component {
     constructor(props){
@@ -20,4 +20,4 @@ import isLoader from '..//hoc/isLoader.js';
 
  
 }
-export default  isLoader(JsonComponent)
+export default  withLoader(JsonComponent)

@@ -1,13 +1,24 @@
 import React from 'react';
 
-function isLoader (Component) {
-   return class  extends React.Component {
-      
+function withLoader (Component) {
+
+    class LoadScrin extends React.Component {
+       constructor(props){
+           super(props)
+           this.state ={
+
+           }
+       }
+
         render (){
-             return ( <div>
-                 { this.props.isLoad ? <Component {...this.props} /> : <div> Загрузка </div> }
-             </div>)
+            const {isLoad, ...props} = this.props;
+
+             return (
+                  isLoad ? <Component {...props} /> : <div> Загрузка </div> 
+             )
         }
     }
+    LoadScrin.displayName = `LoadScrin(${Component.displayName || Component.name || 'Component'})`;
+    return LoadScrin
 }
-export default isLoader;
+export default withLoader;
